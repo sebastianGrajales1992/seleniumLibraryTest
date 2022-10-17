@@ -5,7 +5,7 @@ Library    SeleniumLibrary
 navegar
     [Arguments]    ${url}
     Open Browser    ${url}    Chrome    executable_path=C:/selenium/chromedriver.exe
-
+    Maximize Browser Window
 obtener elemento
     [Arguments]    ${locator}
     Wait Until Element Is Visible    ${locator}    10s
@@ -34,4 +34,13 @@ escribir en un elemento
 obtener lista WebElement
     [Arguments]    ${locator}
     ${lista_webElements} =    Get WebElements    ${locator}
-    [Return]    ${lista_webElements}   
+    [Return]    ${lista_webElements}
+
+dar click a elemento
+    [Arguments]    ${locator}
+    Click Element    ${locator}
+
+retornar existencia de elemento
+    [Arguments]    ${locator}
+    ${existencia_elemento}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}
+    [Return]    ${existencia_elemento}

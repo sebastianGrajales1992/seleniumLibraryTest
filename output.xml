@@ -1,40 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.7.7 on win32)" generated="20221014 17:01:03.083" rpa="false" schemaversion="2">
-<suite id="s1" name="ListTest" source="c:\Users\sebas\Documents\IntegracionGherkins\test\ListTest.robot">
-<test id="s1-t1" name="Scenario outline: validar que al escribir un estado se encuentra la ciudad correspondiente">
-<kw name="Scenario outline: validar que la ciudad corresponda al estado">
-<arg>new york</arg>
-<arg>New Rochelle, New York</arg>
-<kw name="Given navegar a la pagina web de listas de ciudades" library="ListaSteps">
-<kw name="navegar a la pagina web" library="ListaPage">
+<robot generator="Robot 4.1.3 (Python 3.7.7 on win32)" generated="20221017 09:45:57.655" rpa="false" schemaversion="2">
+<suite id="s1" name="TextBoxTest" source="c:\Users\sebas\Documents\IntegracionGherkins\test\TextBoxTest.robot">
+<test id="s1-t1" name="Scenario: como usuario valido el proceso de llenar el formulario">
+<kw name="Scenario: validar formulario TextBoxPage">
+<kw name="Given navegar a la vista text box pages" library="TextBoxSteps">
+<kw name="navegar a la pagina web" library="TextBoxPage">
 <kw name="navegar" library="BasePage">
-<arg>https://andreidbr.github.io/JS30/06AjaxTypeAhead/index.html</arg>
+<arg>https://demoqa.com/text-box</arg>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>Chrome</arg>
 <arg>executable_path=C:/selenium/chromedriver.exe</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221014 17:01:03.881" level="INFO">Opening browser 'Chrome' to base url 'https://andreidbr.github.io/JS30/06AjaxTypeAhead/index.html'.</msg>
-<status status="PASS" starttime="20221014 17:01:03.880" endtime="20221014 17:01:06.450"/>
+<msg timestamp="20221017 09:45:58.098" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/text-box'.</msg>
+<status status="PASS" starttime="20221017 09:45:58.096" endtime="20221017 09:46:04.234"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:03.879" endtime="20221014 17:01:06.451"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221017 09:46:04.235" endtime="20221017 09:46:04.378"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:03.878" endtime="20221014 17:01:06.452"/>
+<status status="PASS" starttime="20221017 09:45:58.094" endtime="20221017 09:46:04.379"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:03.877" endtime="20221014 17:01:06.453"/>
+<status status="PASS" starttime="20221017 09:45:58.093" endtime="20221017 09:46:04.380"/>
 </kw>
-<kw name="When escribir un ${estado}" library="ListaSteps" sourcename="escribir un ${estado}">
-<kw name="escribir estado en el campo texto" library="ListaPage">
-<arg>${estado}</arg>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221014 17:01:09.472" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20221014 17:01:06.461" endtime="20221014 17:01:09.473"/>
+<status status="PASS" starttime="20221017 09:45:58.092" endtime="20221017 09:46:04.381"/>
 </kw>
+<kw name="When escribir en el campo de texto full name" library="TextBoxSteps">
+<arg>Sebastian</arg>
+<kw name="escribir full name" library="TextBoxPage">
+<arg>${full_name}</arg>
 <kw name="escribir en un elemento" library="BasePage">
-<arg>${locatorInputEstado}</arg>
-<arg>${texto}</arg>
+<arg>${locator_fullName}</arg>
+<arg>${value}</arg>
 <kw name="obtener elemento" library="BasePage">
 <var>${elemento}</var>
 <arg>${locator}</arg>
@@ -42,389 +39,182 @@
 <arg>${locator}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221014 17:01:09.476" endtime="20221014 17:01:09.536"/>
+<status status="PASS" starttime="20221017 09:46:04.387" endtime="20221017 09:46:04.443"/>
 </kw>
 <kw name="Get WebElement" library="SeleniumLibrary">
 <var>${elemento}</var>
 <arg>${locator}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<msg timestamp="20221014 17:01:09.550" level="INFO">${elemento} = &lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="2e00b276-2486-4116-8ce4-f962e20dad63")&gt;</msg>
-<status status="PASS" starttime="20221014 17:01:09.536" endtime="20221014 17:01:09.551"/>
+<msg timestamp="20221017 09:46:04.454" level="INFO">${elemento} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2049695402f9a174caf0a504ee8cda6b", element="36725029-1537-41c6-b447-4ca5c70f0ce1")&gt;</msg>
+<status status="PASS" starttime="20221017 09:46:04.443" endtime="20221017 09:46:04.455"/>
 </kw>
-<msg timestamp="20221014 17:01:09.552" level="INFO">${elemento} = &lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="2e00b276-2486-4116-8ce4-f962e20dad63")&gt;</msg>
-<status status="PASS" starttime="20221014 17:01:09.474" endtime="20221014 17:01:09.553"/>
+<msg timestamp="20221017 09:46:04.456" level="INFO">${elemento} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2049695402f9a174caf0a504ee8cda6b", element="36725029-1537-41c6-b447-4ca5c70f0ce1")&gt;</msg>
+<status status="PASS" starttime="20221017 09:46:04.386" endtime="20221017 09:46:04.456"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${elemento}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:09.556" level="INFO">Typing text 'new york' into text field '&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="2e00b276-2486-4116-8ce4-f962e20dad63")&gt;'.</msg>
-<status status="PASS" starttime="20221014 17:01:09.554" endtime="20221014 17:01:10.036"/>
+<msg timestamp="20221017 09:46:04.457" level="INFO">Typing text 'Sebastian' into text field '&lt;selenium.webdriver.remote.webelement.WebElement (session="2049695402f9a174caf0a504ee8cda6b", element="36725029-1537-41c6-b447-4ca5c70f0ce1")&gt;'.</msg>
+<status status="PASS" starttime="20221017 09:46:04.456" endtime="20221017 09:46:04.589"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:09.473" endtime="20221014 17:01:10.038"/>
+<status status="PASS" starttime="20221017 09:46:04.385" endtime="20221017 09:46:04.589"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:06.457" endtime="20221014 17:01:10.040"/>
+<status status="PASS" starttime="20221017 09:46:04.383" endtime="20221017 09:46:04.590"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:06.455" endtime="20221014 17:01:10.041"/>
+<status status="PASS" starttime="20221017 09:46:04.382" endtime="20221017 09:46:04.591"/>
 </kw>
-<kw name="Then validar que la ${texto_ciudad} se encuentra en el listado" library="ListaSteps" sourcename="validar que la ${ciudad} se encuentra en el listado">
-<kw name="obtener lista en formato texto" library="ListaPage">
-<var>${lista_texto}</var>
-<kw name="obtener lista WebElement" library="BasePage">
-<var>${lista_elementos}</var>
-<arg>${locator_elementos_ciudades}</arg>
-<kw name="Get WebElements" library="SeleniumLibrary">
-<var>${lista_webElements}</var>
+<kw name="And escribir en el campo de texto email" library="TextBoxSteps">
+<arg>sebas@mail.com</arg>
+<kw name="escribir mail" library="TextBoxPage">
+<arg>${email}</arg>
+<kw name="escribir en un elemento" library="BasePage">
+<arg>${locator_email}</arg>
+<arg>${value}</arg>
+<kw name="obtener elemento" library="BasePage">
+<var>${elemento}</var>
 <arg>${locator}</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.079" level="INFO">${lista_webElements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="7ebeaae4-c9af-4d4e-a377-714a9794d81e")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
-<status status="PASS" starttime="20221014 17:01:10.049" endtime="20221014 17:01:10.079"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221017 09:46:04.596" endtime="20221017 09:46:04.793"/>
 </kw>
-<msg timestamp="20221014 17:01:10.080" level="INFO">${lista_elementos} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="7ebeaae4-c9af-4d4e-a377-714a9794d81e")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
-<status status="PASS" starttime="20221014 17:01:10.047" endtime="20221014 17:01:10.080"/>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${elemento}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20221017 09:46:04.839" level="INFO">${elemento} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2049695402f9a174caf0a504ee8cda6b", element="7646f920-436c-49a3-a561-0750a1ca2402")&gt;</msg>
+<status status="PASS" starttime="20221017 09:46:04.793" endtime="20221017 09:46:04.839"/>
 </kw>
-<kw name="Create List" library="BuiltIn">
-<var>${lista_texto}</var>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20221014 17:01:10.082" level="INFO">${lista_texto} = []</msg>
-<status status="PASS" starttime="20221014 17:01:10.081" endtime="20221014 17:01:10.082"/>
+<msg timestamp="20221017 09:46:04.842" level="INFO">${elemento} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2049695402f9a174caf0a504ee8cda6b", element="7646f920-436c-49a3-a561-0750a1ca2402")&gt;</msg>
+<status status="PASS" starttime="20221017 09:46:04.595" endtime="20221017 09:46:04.842"/>
 </kw>
-<for flavor="IN">
-<var>${element}</var>
-<value>@{lista_elementos}</value>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="7ebeaae4-c9af-4d4e-a377-714a9794d81e")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.120" level="INFO">${elemnt_text} = New York, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.084" endtime="20221014 17:01:10.121"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221017 09:46:04.844" level="INFO">Typing text 'sebas@mail.com' into text field '&lt;selenium.webdriver.remote.webelement.WebElement (session="2049695402f9a174caf0a504ee8cda6b", element="7646f920-436c-49a3-a561-0750a1ca2402")&gt;'.</msg>
+<status status="PASS" starttime="20221017 09:46:04.843" endtime="20221017 09:46:05.006"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.121" endtime="20221014 17:01:10.123"/>
+<status status="PASS" starttime="20221017 09:46:04.593" endtime="20221017 09:46:05.007"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:10.083" endtime="20221014 17:01:10.123"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="efebfe7f-d541-44c9-990b-de0e2fd79259")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.154" level="INFO">${elemnt_text} = Buffalo, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.124" endtime="20221014 17:01:10.155"/>
+<status status="PASS" starttime="20221017 09:46:04.592" endtime="20221017 09:46:05.008"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.156" endtime="20221014 17:01:10.157"/>
+<status status="PASS" starttime="20221017 09:46:04.591" endtime="20221017 09:46:05.008"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:10.123" endtime="20221014 17:01:10.157"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="e45f043a-e029-431b-a29e-d1543e744c7d")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.186" level="INFO">${elemnt_text} = Rochester, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.158" endtime="20221014 17:01:10.187"/>
+<kw name="And escribir en el campo de texto direccion" library="TextBoxSteps">
+<arg>Call 34 C</arg>
+<kw name="escribir direccion" library="TextBoxPage">
+<arg>${address}</arg>
+<kw name="escribir en un elemento" library="BasePage">
+<arg>${locator_address}</arg>
+<arg>${value}</arg>
+<kw name="obtener elemento" library="BasePage">
+<var>${elemento}</var>
+<arg>${locator}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221017 09:46:05.017" endtime="20221017 09:46:05.054"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.189" endtime="20221014 17:01:10.190"/>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${elemento}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20221017 09:46:05.068" level="INFO">${elemento} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2049695402f9a174caf0a504ee8cda6b", element="5561a244-f623-4963-a3ab-a46fd6f89e87")&gt;</msg>
+<status status="PASS" starttime="20221017 09:46:05.055" endtime="20221017 09:46:05.068"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:10.158" endtime="20221014 17:01:10.190"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="a0ea6dad-fbaa-4697-88e8-0b308f4e242b")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.224" level="INFO">${elemnt_text} = Yonkers, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.191" endtime="20221014 17:01:10.225"/>
+<msg timestamp="20221017 09:46:05.069" level="INFO">${elemento} = &lt;selenium.webdriver.remote.webelement.WebElement (session="2049695402f9a174caf0a504ee8cda6b", element="5561a244-f623-4963-a3ab-a46fd6f89e87")&gt;</msg>
+<status status="PASS" starttime="20221017 09:46:05.014" endtime="20221017 09:46:05.070"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.225" endtime="20221014 17:01:10.226"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221017 09:46:05.072" level="INFO">Typing text 'Call 34 C' into text field '&lt;selenium.webdriver.remote.webelement.WebElement (session="2049695402f9a174caf0a504ee8cda6b", element="5561a244-f623-4963-a3ab-a46fd6f89e87")&gt;'.</msg>
+<status status="PASS" starttime="20221017 09:46:05.070" endtime="20221017 09:46:05.221"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:10.191" endtime="20221014 17:01:10.227"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="031a3243-5e32-490a-95ab-2c0747fbfe96")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.262" level="INFO">${elemnt_text} = Syracuse, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.229" endtime="20221014 17:01:10.262"/>
+<status status="PASS" starttime="20221017 09:46:05.012" endtime="20221017 09:46:05.221"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.263" endtime="20221014 17:01:10.264"/>
+<status status="PASS" starttime="20221017 09:46:05.010" endtime="20221017 09:46:05.222"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:10.228" endtime="20221014 17:01:10.264"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="86fec56c-896d-4ba0-8f33-2e8b881d6a53")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.297" level="INFO">${elemnt_text} = Albany, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.265" endtime="20221014 17:01:10.298"/>
+<status status="PASS" starttime="20221017 09:46:05.009" endtime="20221017 09:46:05.223"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.299" endtime="20221014 17:01:10.300"/>
+<kw name="And dar click en el boton submit" library="TextBoxPage">
+<kw name="retornar existencia de elemento" library="BasePage">
+<var>${existe_anuncio}</var>
+<arg>${locator_anuncio}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${existencia_elemento}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221017 09:46:05.226" endtime="20221017 09:46:05.264"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:10.265" endtime="20221014 17:01:10.300"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="0ed73d8a-29fb-46c4-bb87-2e819d333e86")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.335" level="INFO">${elemnt_text} = New Rochelle, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.301" endtime="20221014 17:01:10.336"/>
+<msg timestamp="20221017 09:46:05.265" level="INFO">${existencia_elemento} = True</msg>
+<status status="PASS" starttime="20221017 09:46:05.225" endtime="20221017 09:46:05.265"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.337" endtime="20221014 17:01:10.339"/>
+<msg timestamp="20221017 09:46:05.266" level="INFO">${existe_anuncio} = True</msg>
+<status status="PASS" starttime="20221017 09:46:05.224" endtime="20221017 09:46:05.267"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:10.300" endtime="20221014 17:01:10.339"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="d54573d9-57f8-4e62-80e0-a66664f0ac5d")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.372" level="INFO">${elemnt_text} = Mount Vernon, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.341" endtime="20221014 17:01:10.373"/>
+<if>
+<branch type="IF" condition="${existe_anuncio} == True">
+<kw name="cerrar anuncion google" library="TextBoxPage">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>var googleId = document.getElementById('adplus-anchor');googleId.style.display = 'none';</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221017 09:46:05.271" level="INFO">Executing JavaScript:
+var googleId = document.getElementById('adplus-anchor');googleId.style.display = 'none';
+Without any arguments.</msg>
+<status status="PASS" starttime="20221017 09:46:05.268" endtime="20221017 09:46:05.281"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.374" endtime="20221014 17:01:10.375"/>
+<status status="PASS" starttime="20221017 09:46:05.268" endtime="20221017 09:46:05.281"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:10.340" endtime="20221014 17:01:10.376"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="725b1776-7c24-45c3-8a86-380269cbf17a")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.410" level="INFO">${elemnt_text} = Schenectady, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.377" endtime="20221014 17:01:10.410"/>
+<status status="PASS" starttime="20221017 09:46:05.267" endtime="20221017 09:46:05.281"/>
+</branch>
+<status status="PASS" starttime="20221017 09:46:05.267" endtime="20221017 09:46:05.282"/>
+</if>
+<kw name="dar click a elemento" library="BasePage">
+<arg>${locator_sunmit}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221017 09:46:05.284" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[5]/div/button'.</msg>
+<msg timestamp="20221017 09:46:06.699" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221017 09:46:06.706" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="submit" type="button" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (1078, 689). Other element would receive the click: &lt;div&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+</msg>
+<status status="FAIL" starttime="20221017 09:46:05.283" endtime="20221017 09:46:06.708"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.411" endtime="20221014 17:01:10.412"/>
+<status status="FAIL" starttime="20221017 09:46:05.282" endtime="20221017 09:46:06.710"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:10.377" endtime="20221014 17:01:10.412"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="59d64523-64ae-4113-b3d6-2de44f547108")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.446" level="INFO">${elemnt_text} = Utica, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.413" endtime="20221014 17:01:10.447"/>
+<status status="FAIL" starttime="20221017 09:46:05.223" endtime="20221017 09:46:06.712"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.447" endtime="20221014 17:01:10.448"/>
+<kw name="Then validar texto del formulario" library="TextBoxSteps">
+<arg>Name:Sebastian</arg>
+<status status="NOT RUN" starttime="20221017 09:46:06.713" endtime="20221017 09:46:06.714"/>
 </kw>
-<status status="PASS" starttime="20221014 17:01:10.412" endtime="20221014 17:01:10.449"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="e7c29900-f267-4149-b0a9-d33a9caa1c9b")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.488" level="INFO">${elemnt_text} = White Plains, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.450" endtime="20221014 17:01:10.488"/>
+<status status="FAIL" starttime="20221017 09:45:58.092" endtime="20221017 09:46:06.714"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.489" endtime="20221014 17:01:10.490"/>
-</kw>
-<status status="PASS" starttime="20221014 17:01:10.449" endtime="20221014 17:01:10.491"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="24b121d3-fb97-47d5-b6a8-e359e7c57190")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.526" level="INFO">${elemnt_text} = Hempstead, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.492" endtime="20221014 17:01:10.527"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.528" endtime="20221014 17:01:10.530"/>
-</kw>
-<status status="PASS" starttime="20221014 17:01:10.491" endtime="20221014 17:01:10.530"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="8c84daa9-c1cb-4664-bcb3-77dc8778b574")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.567" level="INFO">${elemnt_text} = West New York, New Jersey</msg>
-<status status="PASS" starttime="20221014 17:01:10.532" endtime="20221014 17:01:10.568"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.568" endtime="20221014 17:01:10.570"/>
-</kw>
-<status status="PASS" starttime="20221014 17:01:10.531" endtime="20221014 17:01:10.571"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="d11d7e2d-f2a8-4e10-8afd-abc7a22e03fd")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.610" level="INFO">${elemnt_text} = Troy, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.573" endtime="20221014 17:01:10.610"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.611" endtime="20221014 17:01:10.613"/>
-</kw>
-<status status="PASS" starttime="20221014 17:01:10.572" endtime="20221014 17:01:10.614"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="30a4c673-ebe5-450f-8474-23d202dcbe27")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.643" level="INFO">${elemnt_text} = Niagara Falls, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.616" endtime="20221014 17:01:10.643"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.644" endtime="20221014 17:01:10.646"/>
-</kw>
-<status status="PASS" starttime="20221014 17:01:10.615" endtime="20221014 17:01:10.647"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="20f4d00d-33f1-4fa9-9c63-5fe059d8d02a")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.680" level="INFO">${elemnt_text} = Binghamton, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.648" endtime="20221014 17:01:10.680"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.681" endtime="20221014 17:01:10.682"/>
-</kw>
-<status status="PASS" starttime="20221014 17:01:10.647" endtime="20221014 17:01:10.682"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="b1c4f8ab-4c21-431c-9c56-415ea024fa46")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.710" level="INFO">${elemnt_text} = Freeport, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.683" endtime="20221014 17:01:10.710"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.711" endtime="20221014 17:01:10.712"/>
-</kw>
-<status status="PASS" starttime="20221014 17:01:10.683" endtime="20221014 17:01:10.712"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb7c77f393eaf45bc0895bcaf53228c", element="bd40974e-42c8-46c5-afdf-387319d34239")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elemnt_text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20221014 17:01:10.743" level="INFO">${elemnt_text} = Valley Stream, New York</msg>
-<status status="PASS" starttime="20221014 17:01:10.713" endtime="20221014 17:01:10.743"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${lista_texto}</arg>
-<arg>${elemnt_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20221014 17:01:10.743" endtime="20221014 17:01:10.745"/>
-</kw>
-<status status="PASS" starttime="20221014 17:01:10.713" endtime="20221014 17:01:10.745"/>
-</iter>
-<status status="PASS" starttime="20221014 17:01:10.082" endtime="20221014 17:01:10.745"/>
-</for>
-<msg timestamp="20221014 17:01:10.746" level="INFO">${lista_texto} = ['New York, New York', 'Buffalo, New York', 'Rochester, New York', 'Yonkers, New York', 'Syracuse, New York', 'Albany, New York', 'New Rochelle, New York', 'Mount Vernon, New York', 'Schenectady, New ...</msg>
-<status status="PASS" starttime="20221014 17:01:10.045" endtime="20221014 17:01:10.747"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${lista_texto}</arg>
-<arg>${ciudad}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20221014 17:01:10.747" endtime="20221014 17:01:10.748"/>
-</kw>
-<status status="PASS" starttime="20221014 17:01:10.043" endtime="20221014 17:01:10.749"/>
-</kw>
-<status status="PASS" starttime="20221014 17:01:03.875" endtime="20221014 17:01:10.749"/>
-</kw>
-<status status="PASS" starttime="20221014 17:01:03.871" endtime="20221014 17:01:10.751"/>
+<status status="FAIL" starttime="20221017 09:45:58.090" endtime="20221017 09:46:06.716">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="submit" type="button" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (1078, 689). Other element would receive the click: &lt;div&gt;...&lt;/div&gt;
+  (Session info: chrome=106.0.5249.119)
+</status>
 </test>
-<status status="PASS" starttime="20221014 17:01:03.105" endtime="20221014 17:01:10.756"/>
+<status status="FAIL" starttime="20221017 09:45:57.663" endtime="20221017 09:46:06.722"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="ListTest">ListTest</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="TextBoxTest">TextBoxTest</stat>
 </suite>
 </statistics>
 <errors>
