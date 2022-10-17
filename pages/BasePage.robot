@@ -38,9 +38,32 @@ obtener lista WebElement
 
 dar click a elemento
     [Arguments]    ${locator}
-    Click Element    ${locator}
+    ${elemento} =    obtener elemento    ${locator}
+    Click Element    ${elemento}
 
 retornar existencia de elemento
     [Arguments]    ${locator}
     ${existencia_elemento}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}
     [Return]    ${existencia_elemento}
+
+click mouse
+    [Arguments]    ${locator}
+    ${elemento} =    obtener elemento    ${locator}
+    Mouse Down    ${elemento}
+    Click Button    ${elemento}
+
+seleccionar un elemento por su valor
+    [Arguments]    ${locator}    ${value}
+    Select From List By Value   ${locator}    ${value}
+
+seleccionar un elemento por su etiqueta
+    [Arguments]    ${locator}    ${value}
+    Select From List By Label   ${locator}    ${value}
+
+seleccionar un elemento por su indice
+    [Arguments]    ${locator}    ${value}
+    Select From List By Index  ${locator}    ${value}
+
+mover elemento
+    [Arguments]    ${locator_inical}    ${locator_destino}
+    Drag And Drop    ${locator_inical}    ${locator_destino}    

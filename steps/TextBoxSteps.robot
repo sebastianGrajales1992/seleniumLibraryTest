@@ -20,6 +20,7 @@ escribir en el campo de texto direccion
 
 dar click en el boton de submit
     dar click en el boton submit
+    Sleep    5s
 
 validar texto del formulario
     [Arguments]    ${nombre}

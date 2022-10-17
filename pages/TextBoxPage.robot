@@ -31,16 +31,17 @@ dar click en el boton submit
     IF    ${existe_anuncio} == True
         cerrar anuncion google
     END
-    dar click a elemento    ${locator_sunmit}
+    click mouse    ${locator_sunmit}
 
 convertir a lista de texto
     ${elementos} =    obtener lista WebElement    mb-1
     ${elementos_texto}    Create List
     FOR    ${element}    IN    @{elementos}
         ${elemento_texto} =    Get Text     ${element}
+        Log To Console    ${element}
         Append To List    ${elementos_texto}    ${elemento_texto}
     END
-    [Return]    ${elemento_texto}
+    [Return]    ${elementos_texto}
 
 cerrar anuncion google
     Execute Javascript    var googleId = document.getElementById('adplus-anchor');googleId.style.display = 'none';
