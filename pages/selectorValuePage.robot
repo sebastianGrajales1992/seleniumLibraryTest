@@ -15,3 +15,7 @@ seleccionar un valor del selector por su valor
 seleccionar un valor del selector por su etiqueta
     [Arguments]    ${value}
     seleccionar un elemento por su etiqueta   ${locator_selector}    ${value}  
+
+deseleccionar un valor por su indice
+    [Arguments]    ${index}
+    deseleccionar un elemento por su indice    ${locator_selector}    ${index}

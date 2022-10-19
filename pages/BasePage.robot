@@ -5,7 +5,6 @@ Library    SeleniumLibrary
 navegar
     [Arguments]    ${url}
     Open Browser    ${url}    Chrome    executable_path=C:/selenium/chromedriver.exe
-    Maximize Browser Window
 obtener elemento
     [Arguments]    ${locator}
     Wait Until Element Is Visible    ${locator}    10s
@@ -66,4 +65,39 @@ seleccionar un elemento por su indice
 
 mover elemento
     [Arguments]    ${locator_inical}    ${locator_destino}
-    Drag And Drop    ${locator_inical}    ${locator_destino}    
+    Drag And Drop    ${locator_inical}    ${locator_destino}
+
+obtener texto elemento
+    [Arguments]    ${locator}
+    ${elemento} =    obtener elemento    ${locator}
+    ${texto_elemento} =    Get Text    ${elemento}
+    [Return]    ${texto_elemento}
+
+cambiar a elemento iframe
+    [Arguments]    ${locator}
+    ${elemento} =    obtener elemento    ${locator}
+    Select Frame    ${elemento}
+
+volver a html principal
+    Unselect Frame
+
+deseleccionar un elemento por su indice
+    [Arguments]    ${locator}    ${value}
+    Unselect From List By Index  ${locator}    ${value}
+
+cambiar atributo para mostrar elemento
+    [Arguments]    ${id_elemento}
+    Log To Console    ${id_elemento}
+    Execute Javascript    var elementoid = document.getElementById('selectorMultipleTest');elementoid.style.display = 'true';
+
+obtener elemento shadow
+    [Arguments]    ${locator_shadow}
+    Wait Until Element Is Visible    ${locator_shadow}    10s
+    ${elemento_shadow} =    Get WebElement    ${locator_shadow}
+    [Return]    ${elemento_shadow}
+
+obtener texto elemento shadow
+    [Arguments]    ${locator_shadow}
+    ${elemento} =    obtener elemento shadow    ${locator_shadow}
+    ${texto_elemento} =    Get Text    ${elemento}
+    [Return]    ${texto_elemento}

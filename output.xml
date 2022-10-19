@@ -1,52 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.7.7 on win32)" generated="20221017 15:35:37.206" rpa="false" schemaversion="2">
-<suite id="s1" name="DragAndDrop" source="c:\Users\sebas\Documents\IntegracionGherkins\test\DragAndDrop.robot">
-<test id="s1-t1" name="Scenario: Validar que se realice correctamnete el drag and drop">
-<kw name="Scenario: validar movimiento de elemento">
-<kw name="Given como usuario navego al sitio web de drag and drop" library="DragDropSteps">
-<kw name="abrir pagina de drag and Drop" library="DragDropPage">
+<robot generator="Robot 4.1.3 (Python 3.7.7 on win32)" generated="20221019 14:11:24.504" rpa="false" schemaversion="2">
+<suite id="s1" name="ShadowTest" source="c:\Users\sebas\Documents\IntegracionGherkins\test\ShadowTest.robot">
+<test id="s1-t1" name="Scenario: Testear el primer elemento del carrito de compras">
+<kw name="Scenario: como usuaurio valido que el texto del primer elemento del carrito sea Men's Tech Shell Full-Zip">
+<kw name="Given como usuario navego al sitio web de compra de ropa" library="ShadowSteps">
+<kw name="abrir sitio Web" library="ShadowPage">
 <kw name="navegar" library="BasePage">
-<arg>https://the-internet.herokuapp.com/drag_and_drop</arg>
+<arg>https://shop.polymer-project.org/list/mens_outerwear</arg>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>Chrome</arg>
 <arg>executable_path=C:/selenium/chromedriver.exe</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221017 15:35:39.425" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com/drag_and_drop'.</msg>
-<status status="PASS" starttime="20221017 15:35:39.421" endtime="20221017 15:35:44.181"/>
+<msg timestamp="20221019 14:11:25.753" level="INFO">Opening browser 'Chrome' to base url 'https://shop.polymer-project.org/list/mens_outerwear'.</msg>
+<status status="PASS" starttime="20221019 14:11:25.751" endtime="20221019 14:11:30.686"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221017 15:35:44.183" endtime="20221017 15:35:44.351"/>
+<status status="PASS" starttime="20221019 14:11:25.748" endtime="20221019 14:11:30.688"/>
 </kw>
-<status status="PASS" starttime="20221017 15:35:39.416" endtime="20221017 15:35:44.353"/>
+<status status="PASS" starttime="20221019 14:11:25.744" endtime="20221019 14:11:30.689"/>
 </kw>
-<status status="PASS" starttime="20221017 15:35:39.413" endtime="20221017 15:35:44.358"/>
+<status status="PASS" starttime="20221019 14:11:25.741" endtime="20221019 14:11:30.690"/>
 </kw>
-<status status="PASS" starttime="20221017 15:35:39.410" endtime="20221017 15:35:44.360"/>
+<kw name="Then como usuario valido que el texto del primer buso sea Men's Tech Shell Full-Zip" library="ShadowSteps">
+<kw name="obtener texto de primer elemento carrito compra" library="ShadowPage">
+<var>${texto_primer_buso}</var>
+<kw name="obtener texto elemento shadow" library="BasePage">
+<var>${texto_elemento}</var>
+<arg>${selector_path_primer_buso}</arg>
+<kw name="obtener elemento shadow" library="BasePage">
+<var>${elemento}</var>
+<arg>${locator_shadow}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator_shadow}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221019 14:11:30.703" endtime="20221019 14:11:31.181"/>
 </kw>
-<kw name="When como usuario arrastro el elemento desde a hasta b" library="DragDropSteps">
-<kw name="cambiar ubicacion del rectangulo" library="DragDropPage">
-<kw name="mover elemento" library="BasePage">
-<arg>${locator_inicial}</arg>
-<arg>${locator_destino}</arg>
-<kw name="Drag And Drop" library="SeleniumLibrary">
-<arg>${locator_inical}</arg>
-<arg>${locator_destino}</arg>
-<doc>Drags the element identified by ``locator`` into the ``target`` element.</doc>
-<status status="PASS" starttime="20221017 15:35:44.370" endtime="20221017 15:35:46.365"/>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${elemento_shadow}</var>
+<arg>${locator_shadow}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20221019 14:11:31.318" level="INFO">${elemento_shadow} = &lt;selenium.webdriver.remote.webelement.WebElement (session="27717be9c436ae1ee82eac708dce7e47", element="bd549d43-fa9c-4f12-85ff-abac27ad9c25")&gt;</msg>
+<status status="PASS" starttime="20221019 14:11:31.182" endtime="20221019 14:11:31.319"/>
 </kw>
-<status status="PASS" starttime="20221017 15:35:44.367" endtime="20221017 15:35:46.366"/>
+<msg timestamp="20221019 14:11:31.320" level="INFO">${elemento} = &lt;selenium.webdriver.remote.webelement.WebElement (session="27717be9c436ae1ee82eac708dce7e47", element="bd549d43-fa9c-4f12-85ff-abac27ad9c25")&gt;</msg>
+<status status="PASS" starttime="20221019 14:11:30.700" endtime="20221019 14:11:31.321"/>
 </kw>
-<status status="PASS" starttime="20221017 15:35:44.364" endtime="20221017 15:35:46.367"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${texto_elemento}</var>
+<arg>${elemento}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221019 14:11:31.441" level="INFO">${texto_elemento} = Men's Tech Shell Full-Zip</msg>
+<status status="PASS" starttime="20221019 14:11:31.322" endtime="20221019 14:11:31.442"/>
 </kw>
-<status status="PASS" starttime="20221017 15:35:44.362" endtime="20221017 15:35:46.367"/>
+<msg timestamp="20221019 14:11:31.444" level="INFO">${texto_elemento} = Men's Tech Shell Full-Zip</msg>
+<status status="PASS" starttime="20221019 14:11:30.698" endtime="20221019 14:11:31.444"/>
 </kw>
-<status status="PASS" starttime="20221017 15:35:39.404" endtime="20221017 15:35:46.368"/>
+<msg timestamp="20221019 14:11:31.447" level="INFO">${texto_primer_buso} = Men's Tech Shell Full-Zip</msg>
+<status status="PASS" starttime="20221019 14:11:30.695" endtime="20221019 14:11:31.448"/>
 </kw>
-<status status="PASS" starttime="20221017 15:35:39.400" endtime="20221017 15:35:46.374"/>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${texto_primer_buso}</arg>
+<arg>Men's Tech Shell Full-Zip</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221019 14:11:31.449" endtime="20221019 14:11:31.451"/>
+</kw>
+<status status="PASS" starttime="20221019 14:11:30.692" endtime="20221019 14:11:31.452"/>
+</kw>
+<status status="PASS" starttime="20221019 14:11:25.738" endtime="20221019 14:11:31.453"/>
+</kw>
+<status status="PASS" starttime="20221019 14:11:25.733" endtime="20221019 14:11:31.480"/>
 </test>
-<status status="PASS" starttime="20221017 15:35:37.223" endtime="20221017 15:35:46.383"/>
+<status status="PASS" starttime="20221019 14:11:24.524" endtime="20221019 14:11:31.498"/>
 </suite>
 <statistics>
 <total>
@@ -55,7 +80,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="DragAndDrop">DragAndDrop</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="ShadowTest">ShadowTest</stat>
 </suite>
 </statistics>
 <errors>

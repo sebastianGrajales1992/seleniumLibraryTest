@@ -13,3 +13,6 @@ como usuario selecciono el valor de una opccion
 
 como usuario selecciono la etiqueta de una opccion
     seleccionar un valor del selector por su etiqueta    Option 2
+
+como usuario deselecciono el elemento con indice 1
+    deseleccionar un valor por su indice    1
